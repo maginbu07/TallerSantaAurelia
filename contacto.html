@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Talleres Santa Aurelia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+
+        <div class="navbar">
+            <!--<a href="#">Talleres Santa Aurelia</a>-->
+            <div class="logo"><img src="logo_taller1.png"></div>
+            <ul class="links">
+                <li><a href="index.html">Principio</a></li>
+                <li><a href="about">Sobre Nosotros</a></li>
+                <li><a href="Servicios">Servicios</a></li>
+                <li class="Principio_boton"><a href="contacto.html">Contacto</a></li>
+            </ul>
+            <a href="#" class="action_btn"> Pide tu Cita </a>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+
+        <div class="dropdown_menu">
+            <li><a href="index.html">Principio</a></li>
+            <li><a href="about">Sobre Nosotros</a></li>
+            <li><a href="Servicios">Servicios</a></li>
+            <li class="Principio_boton"><a href="Contacto.html">Contacto</a></li>
+            <li><a href="#" class="action_btn"> Pide tu Cita </a></li>
+
+        </div>
+ 
+    </header>
+
+    <script>
+        const toggleBtn = document.querySelector('.toggle_btn');
+        const toggleBtnIcon = document.querySelector('.toggle_btn i');
+        const dropdown_menu = document.querySelector('.dropdown_menu');
+
+        
+        toggleBtn.onclick = function () {
+            dropdown_menu.classList.toggle('open');
+            const isOpen = dropdown_menu.classList.contains('open');
+
+            toggleBtnIcon.classList = isOpen
+                ? 'fa-solid fa-xmark'
+                : 'fa-solid fa-bars';
+        }
+            
+    </script>
+
+    <main>
+
+    <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3179.3567930358945!2d-3.604516624458282!3d37.16799097214468!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd71fc97f949c563%3A0xdae97d3ca6c7cf78!2sTalleres%20Santa%20Aurelia!5e0!3m2!1ses!2ses!4v1756233072804!5m2!1ses!2ses" width="400" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    
+   
+        <!--<div class="imagen-animada"><img src="logo_taller.jpg"></div>-->
+
+
+
+    </main>
+
+
+
+
+
+</body>
+</html>
