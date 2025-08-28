@@ -1,0 +1,236 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  background-image: url('https://images.unsplash.com/photo-1526726538690-5cbf956ae2fd?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover;
+  height: 100vh;
+  background-position: center;
+  backdrop-filter: blur(10px);
+
+}
+
+li{
+    list-style: none;
+}
+
+.Principio_boton a {
+    display: inline-block;
+    background-color: #ff5e5e; /* Color del óvalo */
+    color: white;             /* Color del texto */
+    padding: 8px 20px;        /* Espaciado interior */
+    border-radius: 999px;     /* Hace el fondo ovalado */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a{
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+.imagen-animada {
+  position: relative; /* Ocupa espacio en el flujo del documento */
+  width: 100%; /* Asegura que la imagen no se desborde */
+  height: 100vh; /* Ocupa la altura completa de la ventana */
+  display: flex; /* Permite centrar el contenido fácilmente */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  overflow: hidden; /* Oculta la parte de la imagen que está fuera de la pantalla */
+  
+  
+}
+
+.imagen-animada img {
+  max-width: 90%; /* La imagen no superará el 90% del ancho del contenedor */
+  max-height: 90vh; /* La imagen no superará el 90% de la altura de la ventana */
+  animation: deslizar-a-centro 2s forwards ease-out; /* Aplica la animación */
+}
+
+@keyframes deslizar-a-centro {
+  0% {
+    transform: translateY(-100%); /* Comienza la imagen fuera de la pantalla, arriba */
+  }
+  100% {
+    transform: translateY(0); /* Termina en su posición natural (centro) */
+  }
+}
+
+a:hover{
+    color: #2bbce0;
+    transition: 0.3s ease-in-out;
+}
+
+header{
+    position: relative;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background: rgba(0, 0, 0, 1);
+    padding: 10px 0;
+}
+
+.navbar{
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.navbar .logo a{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar .links{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar .toggle_btn{
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+    margin-right: 20px;
+
+}
+
+.action_btn{
+    background-color: #FEE231;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2s ease-in-out;
+    margin-right: 20px;
+}
+
+.action_btn:hover{
+    scale: 1.05;
+    color:#fff ;
+}
+
+.action_btn:active{
+    scale: 0.95;
+}
+
+.logo img{
+    height: 100px;
+    width: auto;
+    border-radius: 50%;
+    margin-left: 20px;
+}
+.dropdown_menu{
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    height: 0;
+    width: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown_menu.open{
+    height: 240px;
+}
+
+.dropdown_menu li{
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown_menu .action_btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.dropdown_menu li a{
+    color: rgb(0, 0, 0);
+     font-weight: bold;
+}
+
+
+
+
+
+@media (max-width: 992px) {
+
+
+    .navbar .links,
+    .navbar .action_btn{
+        display: none;
+        margin-top: 50px
+    }
+
+    .navbar .toggle_btn{
+        display: block;
+        
+    }
+
+    .dropdown_menu{
+        display: block;
+        margin-top: 50px
+    }
+}
+
+@media (max-width: 576px) {
+    .dropdown_menu{
+        
+        left: 2rem;
+        width: unset;
+        margin-top: 50px;
+        
+    }
+}
+
+.map-container {
+  display: flex;
+  justify-content: flex; /* Mapa a la derecha en pantallas grandes */
+  padding: 20px;
+  margin-top: 40px;
+}
+
+.map-container iframe {
+  width: 48vw;
+  height: 60vh;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Estilo para móviles y tablets */
+@media (max-width: 768px) {
+  .map-container {
+    justify-content: center;
+  }
+
+  .map-container iframe {
+    width: 90vw;       /* Casi todo el ancho */
+    height: 90vw;      /* Cuadrado en móviles */
+    border-radius: 10px;
+  }
+}
