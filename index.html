@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Talleres Santa Aurelia</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="ST_Aurelia_Logo.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+
+        <div class="navbar">
+            <!--<a href="#">Talleres Santa Aurelia</a>-->
+            <div class="logo"><img src="logo_taller1.png"></div>
+            <ul class="links">
+                <li class="Principio_boton"><a href="index.html">Principio</a></li>
+                <li><a href="about.html">Sobre Nosotros</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+            <a href="#" class="action_btn"> Pide tu Cita </a>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+
+        <div class="dropdown_menu">
+            <li class="Principio_boton"><a href="index.html">Principio</a></li>
+            <li><a href="about.html">Sobre Nosotros</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="Contacto.html">Contacto</a></li>
+            <li><a href="#" class="action_btn"> Pide tu Cita </a></li>
+
+        </div>
+ 
+    </header>
+
+    <script>
+    const toggleBtn = document.querySelector('.toggle_btn');
+    const toggleBtnIcon = document.querySelector('.toggle_btn i');
+    const dropdown_menu = document.querySelector('.dropdown_menu');
+
+    toggleBtn.onclick = function () {
+        dropdown_menu.classList.toggle('open');
+        toggleBtn.classList.toggle('open');
+
+        const isOpen = dropdown_menu.classList.contains('open');
+
+        // crossfade del icono con giro
+        toggleBtnIcon.style.opacity = 0;
+        toggleBtnIcon.style.transform = "rotate(90deg)"; // animación inicial
+        setTimeout(() => {
+            toggleBtnIcon.classList = isOpen
+                ? 'fa-solid fa-xmark'
+                : 'fa-solid fa-bars';
+            toggleBtnIcon.style.transform = "rotate(0deg)";
+            toggleBtnIcon.style.opacity = 1;
+        }, 250); // tiempo sincronizado con CSS
+    }
+    </script>
+
+
+    <main>
+    <!-- Hero principal -->
+    <section class="hero">
+        <div class="hero-texto">
+            <h1>Bienvenido a <span>Talleres Santa Aurelia</span></h1>
+            <p>Tu taller de confianza en Calle Santa Aurelia, especialistas en <strong>mecánica</strong> y <strong>autolavado</strong>.</p>
+            <a href="servicios.html" class="btn-cta">Conoce Nuestros Servicios</a>
+        </div>
+    </section>
+
+    <!-- Servicios destacados -->
+    <section class="servicios-destacados">
+        <h2>Nuestros Servicios</h2>
+        <div class="servicios-grid">
+            <div class="servicio-card">
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+                <h3>Mecánica</h3>
+                <p>Reparaciones generales, mantenimientos preventivos y diagnósticos avanzados con tecnología de última generación.</p>
+            </div>
+            <div class="servicio-card">
+                <i class="fa-solid fa-car-side"></i>
+                <h3>Autolavado</h3>
+                <p>Lavado exterior, interior y tratamientos de detallado para que tu coche luzca como nuevo.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="porque-elegirnos">
+  <h2>¿Por qué elegir Talleres Santa Aurelia?</h2>
+  <div class="beneficios">
+    <div class="beneficio">
+      <i class="fa-solid fa-user-shield"></i>
+      <h3>Confianza</h3>
+      <p>Tenemos gran experiencia cuidando de tu coche con total transparencia.</p>
+    </div>
+    <div class="beneficio">
+      <i class="fa-solid fa-bolt"></i>
+      <h3>Rapidez</h3>
+      <p>Atención ágil y eficiente para que vuelvas a la carretera lo antes posible.</p>
+    </div>
+    <div class="beneficio">
+      <i class="fa-solid fa-award"></i>
+      <h3>Calidad Garantizada</h3>
+      <p>Trabajamos con repuestos de primera y ofrecemos garantía en todos nuestros servicios.</p>
+    </div>
+  </div>
+</section>
+
+
+</main>
+
+
+
+
+</body>
+</html>

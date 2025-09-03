@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Talleres Santa Aurelia</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="ST_Aurelia_Logo.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+
+        <div class="navbar">
+            <!--<a href="#">Talleres Santa Aurelia</a>-->
+            <div class="logo"><img src="logo_taller1.png"></div>
+            <ul class="links">
+                <li><a href="index.html">Principio</a></li>
+                <li class="Principio_boton"><a href="about.html">Sobre Nosotros</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+            <a href="#" class="action_btn"> Pide tu Cita </a>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+
+        <div class="dropdown_menu">
+            <li><a href="index.html">Principio</a></li>
+            <li class="Principio_boton"><a href="about.html">Sobre Nosotros</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="Contacto.html">Contacto</a></li>
+            <li><a href="#" class="action_btn"> Pide tu Cita </a></li>
+
+        </div>
+ 
+    </header>
+
+    <script>
+        const toggleBtn = document.querySelector('.toggle_btn');
+        const toggleBtnIcon = document.querySelector('.toggle_btn i');
+        const dropdown_menu = document.querySelector('.dropdown_menu');
+
+        
+        toggleBtn.onclick = function () {
+            dropdown_menu.classList.toggle('open');
+            const isOpen = dropdown_menu.classList.contains('open');
+
+            toggleBtnIcon.classList = isOpen
+                ? 'fa-solid fa-xmark'
+                : 'fa-solid fa-bars';
+        }
+            
+    </script>
+
+<main>
+    <!-- Hero Visual -->
+    <section class="about-hero">
+        <div class="about-texto">
+            <h1>Bienvenido a Nuestro Espacio</h1>
+            <p>Descubre todo lo que podemos ofrecerte en mecánica y autolavado. Calidad, confianza y estilo en cada servicio.</p>
+            <a href="servicios.html" class="btn-cta">Ver Servicios</a>
+        </div>
+    </section>
+
+    <!-- Sección de Servicios Visuales -->
+    <section class="about-servicios">
+        <h2>Nuestros Servicios Destacados</h2>
+        <div class="servicios-grid">
+            <div class="servicio-card">
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+                <h3>Mecánica General</h3>
+                <p>Revisiones, mantenimiento y reparaciones con la máxima precisión y rapidez.</p>
+            </div>
+            <div class="servicio-card">
+                <i class="fa-solid fa-car"></i>
+                <h3>Autolavado</h3>
+                <p>Lavado completo y detallado de tu vehículo, por dentro y por fuera.</p>
+            </div>
+            <div class="servicio-card">
+                <i class="fa-solid fa-clipboard-check"></i>
+                <h3>Servicio Pre-itv</h3>
+                <p>Preparación y revisión completa de tu coche antes de la ITV para asegurar que todo esté correcto. Incluso llevamos tu coche por ti si lo necesitas.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Sección Beneficios / Por qué elegirnos -->
+    <section class="about-beneficios">
+        <h2>Por Qué Elegirnos</h2>
+        <div class="beneficios-grid">
+            <div class="beneficio-card">
+                <i class="fa-solid fa-clock"></i>
+                <h3>Rápido y Eficiente</h3>
+                <p>Servicios ágiles sin comprometer la calidad.</p>
+            </div>
+            <div class="beneficio-card">
+                <i class="fa-solid fa-thumbs-up"></i>
+                <h3>Calidad Garantizada</h3>
+                <p>Resultados impecables que superan expectativas.</p>
+            </div>
+            <div class="beneficio-card">
+                <i class="fa-solid fa-users"></i>
+                <h3>Atención Personalizada</h3>
+                <p>Nos adaptamos a tus necesidades y preferencias.</p>
+            </div>
+            <div class="beneficio-card">
+                <i class="fa-solid fa-shield-halved"></i>
+                <h3>Seguridad</h3>
+                <p>Todos nuestros procesos cumplen estándares de seguridad.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Equipo Visual -->
+    <section class="about-equipo">
+        <h2>Conoce al Equipo</h2>
+        <div class="equipo-grid">
+            <div class="miembro-equipo">
+                <img src="team1.jpeg" alt="Mecánico">
+                <h3>Ramon Pérez</h3>
+                <p>Especialista en reparaciones avanzadas y diagnósticos precisos.</p>
+            </div>
+            <div class="miembro-equipo">
+                <img src="team2.jpeg" alt="Autolavado">
+                <h3>Cristina Reyes</h3>
+                <p>Encargada de autolavado y detallado, dejando cada coche impecable.</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resultados Lavado - Talleres Santa Aurelia</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<style>
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-image: url('https://images.unsplash.com/photo-1526726538690-5cbf956ae2fd?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(5px);
+    color: #fff;
+}
+
+/* HEADER */
+header {
+    position: relative;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background: rgba(0,0,0,1);
+    padding: 10px 0;
+}
+
+/* Grid de categorías */
+.categoria {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin: 40px auto;
+    max-width: 1200px;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(6px);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.categoria h2 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+/* Carrusel manual */
+.carrusel {
+    flex: 1 1 45%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 500px; /* ancho fijo opcional */
+    height: 300px;    /* altura fija */
+    background: #000;
+}
+
+.carrusel-track {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.carrusel-track img {
+    flex: 0 0 100%; /* cada imagen ocupa todo el ancho del carrusel */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* Flechas */
+.carrusel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: #fff;
+    background: rgba(0,0,0,0.5);
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.carrusel-button.prev { left: 10px; }
+.carrusel-button.next { right: 10px; }
+
+/* Puntos */
+.carrusel-points {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.carrusel-points span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.carrusel-points .active {
+    background: #FEE231;
+}
+
+/* Contenido al lado derecho */
+.categoria-contenido {
+    flex: 1 1 45%;
+    padding: 20px;
+}
+
+.categoria-contenido p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+@media(max-width: 900px){
+    .categoria {
+        flex-direction: column;
+        align-items: center;
+    }
+    .carrusel, .categoria-contenido {
+        flex: 1 1 100%;
+        margin-bottom: 20px;
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <div class="navbar">
+        <div class="logo"><img src="logo_taller1.png" alt="Logo Talleres Santa Aurelia"></div>
+        <ul class="links">
+            <li><a href="index.html">Principio</a></li>
+            <li><a href="about.html">Sobre Nosotros</a></li>
+            <li class="Principio_boton"><a href="servicios.html">Servicios</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+        <a href="#" class="action_btn">Pide tu Cita</a>
+        <div class="toggle_btn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- Categoría Tapicerías -->
+    <section class="categoria">
+        <h2>Tapicerías</h2>
+        <div class="carrusel" id="carrusel-tapiceria">
+            <button class="carrusel-button prev">&#10094;</button>
+            <div class="carrusel-track">
+                <img src="img/tapiceria1.jpg" alt="">
+                <img src="img/tapiceria2.jpg" alt="">
+                <img src="img/tapiceria3.jpg" alt="">
+            </div>
+            <button class="carrusel-button next">&#10095;</button>
+            <div class="carrusel-points"></div>
+        </div>
+        <div class="categoria-contenido">
+            <p>Lavado y cuidado de tapicerías, eliminación de manchas y suciedad incrustada, manteniendo los asientos como nuevos.</p>
+        </div>
+    </section>
+
+    <!-- Categoría Interior -->
+    <section class="categoria">
+        <h2>Lavado Interior</h2>
+        <div class="carrusel" id="carrusel-interior">
+            <button class="carrusel-button prev">&#10094;</button>
+            <div class="carrusel-track">
+                <img src="images/interior1.jpg" alt="">
+                <img src="images/interior2.jpg" alt="">
+                <img src="images/interior3.jpg" alt="">
+            </div>
+            <button class="carrusel-button next">&#10095;</button>
+            <div class="carrusel-points"></div>
+        </div>
+        <div class="categoria-contenido">
+            <p>Limpieza integral del interior del vehículo, incluyendo moquetas, salpicadero y zonas difíciles de alcanzar.</p>
+        </div>
+    </section>
+
+    <!-- Categoría Exterior -->
+    <section class="categoria">
+        <h2>Lavado Exterior</h2>
+        <div class="carrusel" id="carrusel-exterior">
+            <button class="carrusel-button prev">&#10094;</button>
+            <div class="carrusel-track">
+                <img src="img/exterior1.jpg" alt="">
+                <img src="img/exterior2.jpg" alt="">
+                <img src="img/exterior3.jpg" alt="">
+            </div>
+            <button class="carrusel-button next">&#10095;</button>
+            <div class="carrusel-points"></div>
+        </div>
+        <div class="categoria-contenido">
+            <p>Limpieza y pulido exterior, eliminación de suciedad y residuos adheridos a la pintura, manteniendo tu coche brillante.</p>
+        </div>
+    </section>
+</main>
+
+<script>
+// Función carrusel
+function initCarrusel(carruselId) {
+    const carrusel = document.getElementById(carruselId);
+    const track = carrusel.querySelector('.carrusel-track');
+    const slides = track.children;
+    const prevBtn = carrusel.querySelector('.prev');
+    const nextBtn = carrusel.querySelector('.next');
+    const pointsContainer = carrusel.querySelector('.carrusel-points');
+
+    let current = 0;
+    const total = slides.length;
+
+    // Crear puntos
+    for(let i=0; i<total; i++){
+        const point = document.createElement('span');
+        if(i === 0) point.classList.add('active');
+        pointsContainer.appendChild(point);
+    }
+    const points = pointsContainer.querySelectorAll('span');
+
+    function updateCarousel() {
+        track.style.transform = `translateX(-${current*100}%)`;
+        points.forEach(p => p.classList.remove('active'));
+        points[current].classList.add('active');
+    }
+
+    prevBtn.onclick = () => {
+        current = (current -1 + total) % total;
+        updateCarousel();
+    }
+    nextBtn.onclick = () => {
+        current = (current +1) % total;
+        updateCarousel();
+    }
+
+    points.forEach((p, index) => {
+        p.onclick = () => {
+            current = index;
+            updateCarousel();
+        }
+    });
+}
+
+// Inicializar todos los carruseles
+['carrusel-tapiceria','carrusel-interior','carrusel-exterior'].forEach(initCarrusel);
+</script>
+</body>
+</html>
